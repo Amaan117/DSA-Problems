@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Solution {
+	public static ArrayList<Integer> rotateArray(ArrayList<Integer> arr, int k) {
+        // Write your code here.
+        ArrayList arr2= new ArrayList<>();
+        ArrayList arr3 = new ArrayList<>();
+
+        if(arr.size()<=2){
+            Collections.reverse(arr);
+            return arr;
+        }
+
+        for(int i=0;i<k;i++){
+            arr2.add(arr.get(i));
+        }
+        for(int i=k;i<arr.size();i++){
+            arr3.add(arr.get(i));
+        }
+        Collections.reverse(arr2);
+        Collections.reverse(arr3);
+
+        arr2.addAll(arr3);
+        Collections.reverse(arr2);
+ 
+        return arr2;
+    }
+}
