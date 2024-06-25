@@ -1,0 +1,21 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+
+	public static int minElementsToRemove(ArrayList<Integer> arr) {
+
+		HashSet<Integer> set = new HashSet<>();
+		int n = arr.size();
+		int count=0;
+		int hashCount=0;
+
+		for(int i=0;i<n;i++){
+			set.add(arr.get(i));
+		}
+		for(int nums : set){
+			hashCount++;
+		}
+
+		return n-hashCount;
+	}
+}
